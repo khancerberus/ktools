@@ -6,11 +6,23 @@ name = "pypi"
 [packages]
 flask = "*"
 python-dotenv = "*"
+flask-sqlalchemy = "*"
+psycopg2 = "*"
 
 [dev-packages]
+pytest = "*"
+pytest-ordering = "*"
+isort = "*"
+autopep8 = "*"
+flake8 = "*"
+mccabe = "*"
+coverage = "*"
+faker = "*"
 
 [requires]
 python_version = "3.11"
 
 [scripts]
 dev = "flask --debug run --host=0.0.0.0"
+test = "coverage run --branch -m pytest --no-header -vv -s"
+report = "coverage report -m"

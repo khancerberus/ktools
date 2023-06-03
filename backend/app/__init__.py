@@ -1,8 +1,16 @@
+from dotenv import load_dotenv
 from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
 
 
-def generate_app():
-    app = Flask(__name__, instance_relative_config=False)
-    app.config.from_object('config.Development')
+db = SQLAlchemy()
+
+
+def generate_app(config_object='config.Development'):
+    load_dotenv()
+    app = Flask(__name__)
+    app.config.from_object(config_object)
+
+    db.init_app(app)
 
     return app

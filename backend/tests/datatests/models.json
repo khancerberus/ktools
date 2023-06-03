@@ -1,0 +1,29 @@
+{
+    "users": [
+        {
+            "public_id": "1107911855855",
+            "twitch_id": "32313666",
+            "login_name": "Michelle"
+        },
+        {
+            "public_id": "9731607133747",
+            "twitch_id": "52743825",
+            "login_name": "Ethan"
+        },
+        {
+            "public_id": "7656119744675",
+            "twitch_id": "54815698",
+            "login_name": "Linda"
+        },
+        {
+            "public_id": "8271246117186",
+            "twitch_id": "15581426",
+            "login_name": "Lauren"
+        },
+        {
+            "public_id": "4146572387173",
+            "twitch_id": "99060640",
+            "login_name": "Matthew"
+        }
+    ]
+}
