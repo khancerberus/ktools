@@ -1,14 +1,42 @@
+import { useEffect } from "react";
+import { Route } from "react-router-dom";
+import { Routes } from "react-router-dom";
+
+import { useUser } from "@hooks/useUser";
+import Home from "./Home";
+import Login from "./Login";
+import PrivateRoute from "./PrivateRoute";
+import Dashboard from "./Dashboard";
+import Navigator from "./Navigator";
+
 const App = () => {
+  // const { user, logout } = useUser();
+
+  useEffect(() => {
+  }, []);
+
+  const route = (path, element) => {
+    return (
+      <Route path={path} element={
+        <PrivateRoute>
+          {element}
+        </PrivateRoute>
+      } />
+    )
+  }
 
   return (
-    <div className="container-fluid text-center">
-      <h1 className="">KTOOLS First heading</h1>
-      <h2 className="">KTOOLS Second heading</h2>
-      <h3 className="">KTOOLS Third heading</h3>
-      <h4 className="">KTOOLS Fourth heading</h4>
-      <h5 className="">KTOOLS Fifth heading</h5>
-      <h6 className="">KTOOLS Sixth heading</h6>
-      <p className="">Hola este es un parrafo, aca va la descripcion del proyecto</p>
+    <div className="container-fluid m-0 p-0">
+      <Navigator />
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+
+        {route("/dashboard", <Dashboard />)}
+
+        <Route path="*" element={<h1>Not Found</h1>} />
+      </Routes>
     </div>
   );
 }

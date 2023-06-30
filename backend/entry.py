@@ -1,7 +1,9 @@
 import os
 
+from dotenv import load_dotenv
+
 from app import generate_app
 
-
-config_object = os.getenv('APP_SETTINGS')
-application = generate_app(config_object)
+load_dotenv()
+settings = os.getenv('APP_SETTINGS', 'config.development')
+application = generate_app(settings)

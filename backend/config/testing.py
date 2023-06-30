@@ -1,7 +1,8 @@
-from .default import Config
+import os
+
+from .default import * # noqa
 
 
-class Testing(Config):
-    TESTING = True
-    DEBUG = False
-    SQLALCHEMY_DATABASE_URI = 'sqlite:///:memory:'
+TESTING = True
+DEBUG = False
+SQLALCHEMY_DATABASE_URI = os.getenv('TESTING_DB_URI')
