@@ -51,7 +51,7 @@ def login():
                     'profile_image_url': user.profile_image_url,
                     'authorized_apps': [
                         token.token_type.name
-                        for token in user.tokens
+                        for token in user.tokens  # type: ignore  # TODO: Fix
                     ]
                 }
             }
@@ -67,7 +67,7 @@ def get_or_register_user(access_token):
     user = User.get_by_twitch_id(twitch_user['id'])
     if user is None:
         user = User()
-        user.public_id = User.get_public_id()
+        user.public_id = User.generate_public_id()
         user.twitch_id = twitch_user['id']
     user.login_name = twitch_user['login']
     user.email = twitch_user['email']

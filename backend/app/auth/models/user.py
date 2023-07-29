@@ -51,8 +51,8 @@ class User(db.Model):
         return User.query.filter_by(login_name=login_name).first()
 
     @staticmethod
-    def get_public_id():
+    def generate_public_id():
         new_public_id = secrets.token_hex(12)
         if User.get_by_public_id(new_public_id):
-            return User.get_public_id()
+            return User.generate_public_id()
         return new_public_id
