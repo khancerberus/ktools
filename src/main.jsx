@@ -9,6 +9,7 @@ import App from "./App.jsx";
 import "primereact/resources/themes/arya-orange/theme.css";
 import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
+import "primeflex/primeflex.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import "@assets/css/main.css";

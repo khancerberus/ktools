@@ -14,15 +14,15 @@ const Dashboard = () => {
     <div className="container">
       <div className="row">
         <div className="col-12">
-          <h4 className="text-center my-3">Authorized applications</h4>
+          <h4 className="text-center my-3 titulo">DASHBOARD</h4>
         </div>
       </div>
 
       <hr />
 
       <div className="row">
-        <div className="col-sm-12 col-md-4 col-lg-3">
-          <div className="card my-1" style={{minHeight: "10rem"}}>
+        <div className="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+          <div className="card my-1" style={{minHeight: "10rem"}} data-bs-theme="dark">
             <div className="card-header">
               <h5 className="card-title m-0 text-center">POKEAPI</h5>
             </div>

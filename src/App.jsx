@@ -7,10 +7,10 @@ import Home from "./Home";
 import Login from "./Login";
 import PrivateRoute from "./PrivateRoute";
 import Dashboard from "./Dashboard";
-import Navigator from "./Navigator";
+import SideNav from "./SideNav";
 
 const App = () => {
-  // const { user, logout } = useUser();
+  const { user } = useUser();
 
   useEffect(() => {
   }, []);
@@ -26,17 +26,23 @@ const App = () => {
   }
 
   return (
-    <div className="container-fluid m-0 p-0">
-      <Navigator />
+    <div>
+      {/* <Navigator /> */}
+      {user &&
+        <SideNav />
+      }
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
+      <div className="body-pd" id="body">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
 
-        {route("/dashboard", <Dashboard />)}
+          {route("/dashboard", <Dashboard />)}
 
-        <Route path="*" element={<h1>Not Found</h1>} />
-      </Routes>
+          <Route path="*" element={<h1>Not Found</h1>} />
+        </Routes>
+      </div>
+
     </div>
   );
 }
