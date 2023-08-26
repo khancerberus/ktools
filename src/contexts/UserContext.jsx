@@ -31,8 +31,6 @@ export const UserContextProvider = ({ children }) => {
     navigate("/", { replace: true, state: { from: location } });
   };
 
-
-
   useEffect(() => {
     const user = AuthService.getUserFromToken();
     setUser(user);

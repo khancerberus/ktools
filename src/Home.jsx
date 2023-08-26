@@ -12,7 +12,10 @@ const Home = () => {
   useEffect(() => {
     setTitle("");
 
-  }, []);
+    return () => {
+      setTitle("Dashboard");
+    }
+  }, [setTitle]);
 
   return (
     <div className="m-5">

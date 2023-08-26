@@ -1,8 +1,11 @@
 import os
+import datetime
 
 
 SECRET_KEY = os.getenv('SECRET_KEY')
 SQLALCHEMY_TRACK_MODIFICATIONS = False
+
+JWT_REFRESH_TOKEN_EXPIRES = datetime.timedelta(days=30)
 
 TWITCH_CLIENT_ID = os.getenv('TWITCH_CLIENT_ID')
 TWITCH_CLIENT_SECRET = os.getenv('TWITCH_CLIENT_SECRET')

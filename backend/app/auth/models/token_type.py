@@ -8,7 +8,7 @@ class TokenType(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(128), nullable=False, unique=True)
-    scoops = db.Column(db.String(256), nullable=False, unique=False)
+    scopes = db.Column(db.String(256), nullable=False, unique=False)
 
     tokens = db.relationship('Token', backref='token_type', lazy=True)
 

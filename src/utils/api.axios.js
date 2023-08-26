@@ -15,16 +15,17 @@ export const AxiosInterceptor = ({ children }) => {
     apiAxios.interceptors.request.use(
       (config) => {
         const token = localStorage.getItem('access_token');
-        if (token) {
+        if (token !== null && token !== undefined) {
           config.headers['Authorization'] = 'Bearer ' + token;
         }
+        config.headers['Allow-Control-Allow-Origin'] = '*';
         return config;
       },
       (error) => {
         Promise.reject(error);
       }
     );
-    
+
     apiAxios.interceptors.response.use(
       (response) => {
         return response;

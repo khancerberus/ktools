@@ -27,6 +27,20 @@ class User(db.Model):
     def save(self):
         return try_save(self)
 
+    def is_authorized(self, application):
+        if application is None:
+            return False
+
+        if self.tokens is None:
+            return False
+
+        has_token = [
+            token for token in self.tokens  # type: ignore
+            if token.token_type.name == application
+        ]
+
+        return len(has_token) != 0
+
     def __repr__(self):
         return f'<User {self.public_id}>'
 

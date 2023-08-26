@@ -1,4 +1,4 @@
-import { Button } from "primereact/button";
+import { Button } from "@prismane/core";
 import { Fragment } from "react";
 import { StyleClass } from "primereact/styleclass";
 import { useNavigate } from "react-router-dom";
@@ -18,14 +18,13 @@ const SideNav = () => {
   const [dialogVisible, setDialogVisible] = useState(false);
 
   const NavItem = ({ label, icon, path }) => (
-    <li>
+    <li style={{whiteSpace: "nowrap"}}>
       <Button
         onClick={() => navigate(path)}
-        className="w-100 my-1 rounded-0"
-        size="large"
+        className="btn-ktools w-100 my-1 rounded-0 justify-content-start bg-gradient"
       >
         <i className={`pi ${icon}`}></i>
-        <span className="ms-4">{label}</span>
+        <span className="ms-5">{label}</span>
       </Button>
     </li>
   )
@@ -43,13 +42,13 @@ const SideNav = () => {
 
       <StyleClass nodeRef={toggleButton} selector=".header" toggleClassName="header-pd" />
       <header className="header shadow-4 header-pd" id="header">
-        <div class="header_toggle">
+        <div className="header_toggle">
           <Button
-            className="header_toggle_button"
+            className="btn-ktools header_toggle_button bg-gradient"
             ref={toggleButton}
             text
           >
-            <i id="header-toggle" class="pi pi-bars text-white"></i>
+            <i id="header-toggle" className="pi pi-bars text-white"></i>
           </Button>
         </div>
 
@@ -70,10 +69,11 @@ const SideNav = () => {
           >
             <div className="d-flex flex-column align-items-center">
               <Button
-                label="Logout"
-                className="w-100 my-2 bg-red-400 border-0"
+                className="btn-ktools w-100 my-2 bg-red-400 border-0"
                 onClick={() => logout()}
-              />
+              >
+                Logout
+              </Button>
             </div>
           </Dialog>
         </div>
@@ -85,7 +85,7 @@ const SideNav = () => {
           <div>
             {/** LOGO */}
 
-            <div class="nav_list">
+            <div className="nav_list">
               <ul className="list-group">
                 <NavItem
                   label="Home"

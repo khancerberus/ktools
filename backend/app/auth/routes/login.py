@@ -44,15 +44,11 @@ def login():
     # Generate the JWT access token to APP
     return jsonify(
         access_token=create_access_token(
-            identity=user.public_id,
+            identity=user,
             additional_claims={
                 'user': {
                     'username': user.login_name,
-                    'profile_image_url': user.profile_image_url,
-                    'authorized_apps': [
-                        token.token_type.name
-                        for token in user.tokens  # type: ignore  # TODO: Fix
-                    ]
+                    'profile_image_url': user.profile_image_url
                 }
             }
         )
@@ -88,5 +84,5 @@ def get_twitch_user(access_token):
     response = response.json()
     if 'data' not in response or len(response['data']) == 0:
         return None
-    print(response['data'][0])
+
     return response['data'][0]

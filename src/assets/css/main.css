@@ -1,26 +1,29 @@
 @font-face {
+    font-family: 'Meon';
+    src: local('Meon'),
+        url('@assets/fonts/meon.woff2') format('truetype');
+}
+
+@font-face {
     font-family: 'Roobert';
     src: local('Roobert'),
         url('@assets/fonts/Roobert-Regular.ttf') format('truetype');
 }
 
-@font-face {
-    font-family: 'Bungee';
-    src: local('Bungee'),
-        url('@assets/fonts/Bungee-Regular.ttf') format('truetype');
-}
-
 :root {
-    --bs-body-font-family: 'Roobert', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    --btn-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI',
         'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
         'Helvetica Neue', sans-serif;
-    --bs-heading-font-family: 'Bungee', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    --bs-body-font-family: 'CascadiaCode', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+        'Helvetica Neue', sans-serif;
+    --bs-heading-font-family: 'Roobert', -apple-system, BlinkMacSystemFont, 'Segoe UI',
         'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
         'Helvetica Neue', sans-serif;
     --bs-heading-color: #D9D9D9;
 
     --app-bg: #581835;
-    --side-nav-bg: #333;
+    --side-nav-bg: #3a0d3a;
     --header-height: 3rem;
     --z-fixed: 100;
     --nav-width: 4rem;
@@ -45,11 +48,20 @@ html {
 
 body {
     font-family: var(--bs-body-font-family);
-    background: linear-gradient(270deg, #006eff, #4b123a);
+    background: #0e0915;
+}
+
+.btn-ktools {
+    text-shadow: 0 0 5px #fff;
+    font-family: var(--btn-font-family);
+    font-weight: 600;
+    border-radius: 0.05rem;
+    box-shadow: 0px 0px 5px 1px rgb(207, 44, 104);
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--bs-heading-font-family);
+    font-weight: 600;
 }
 
 div#body {

@@ -1,14 +1,16 @@
 import { useEffect } from "react";
-import { Button } from "primereact/button";
+import { Button } from "@prismane/core";
 
 import { useUser } from "@hooks/useUser";
+import { useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
-  const { user, setTitle } = useUser();
+  const { setTitle } = useUser();
+  const navigate = useNavigate();
 
   useEffect(() => {
     setTitle("Dashboard");
-  }, []);
+  }, [setTitle]);
 
   return (
     <div className="container">
@@ -30,7 +32,9 @@ const Dashboard = () => {
               <p className="card-text">This is the PokeAPI application.</p>
             </div>
             <div className="card-footer text-center">
-              <Button label="Go to PokeAPI" onClick={() => window.location.href = "https://pokeapi.co/"} />
+              <Button className="btn-ktools bg-gradient" variant="primary" onClick={() => navigate("/pokeapi")}>
+                CONFIGURAR
+              </Button>
             </div>
           </div>
         </div>
